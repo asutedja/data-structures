@@ -20,10 +20,11 @@ var treeMethods = {};
 
 treeMethods.addChild = function(value) {
   // your code here
-  this.value = value;
-  this.children.push(this);
+  var tree = Tree(value);
+  tree.value = value;
+  this.children.push(tree);
 
-  console.log(this);
+
    // fix me
 };
 
@@ -31,15 +32,13 @@ treeMethods.contains = function(target) {
   if (this.value === target) {
     return true;
   }
-  if (this.children.length < 1) {
-    for (var i = 0; i < this.children.length; i++) {
-      var child = this.children[i]; 
-      if (child.contains(target)) {
-        console.log(this.value);
-        return true;
-      }
+  for (var i = 0; i < this.children.length; i++) {
+    var child = this.children[i]; 
+    if (child.contains(target)) {
+      return true;
     }
   }
+  
 
   return false;
 };
