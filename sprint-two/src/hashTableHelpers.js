@@ -13,21 +13,27 @@
 
 var LimitedArray = function(limit) {
   var storage = [];
-
   var limitedArray = {};
+
+  //constant time
   limitedArray.get = function(index) {
     checkLimit(index);
     return storage[index];
   };
+
+  // constant time
   limitedArray.set = function(index, value) {
     checkLimit(index);
     storage[index] = value;
   };
+
+  //linear time
   limitedArray.each = function(callback) {
     for (var i = 0; i < storage.length; i++) {
       callback(storage[i], i, storage);
     }
   };
+
 
   var checkLimit = function(index) {
     if (typeof index !== 'number') {

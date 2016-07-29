@@ -22,7 +22,7 @@ Graph.prototype.addNode = function(node) {
 //linear time
 Graph.prototype.contains = function(node) {
   for (var key in this.points) {
-    if (this.points[node].node === node) {
+    if (this.points[key].node === node) {
       return true;
     }
   }
