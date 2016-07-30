@@ -3,6 +3,7 @@ var LinkedList = function() {
   list.head = null;
   list.tail = null;
 
+//constant
   list.addToTail = function(value) {
     
     var node = Node(value);
@@ -23,6 +24,7 @@ var LinkedList = function() {
     }
   };
 
+//constant
   list.removeHead = function() {
     //Find out where the head it at
     var temp = list.head.next;
@@ -38,6 +40,7 @@ var LinkedList = function() {
 
   };
 
+//linear
   list.contains = function(target) {
     
     var check = list.head;
@@ -74,5 +77,4 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
- How fast it iterates through the linkedlist.
  */

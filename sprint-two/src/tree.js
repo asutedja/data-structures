@@ -18,6 +18,7 @@ var extend = function(to, here) {
 
 var treeMethods = {};
 
+//constant
 treeMethods.addChild = function(value) {
   // your code here
   var tree = Tree(value);
@@ -28,6 +29,8 @@ treeMethods.addChild = function(value) {
    // fix me
 };
 
+
+//logarithmic
 treeMethods.contains = function(target) {
   if (this.value === target) {
     return true;
