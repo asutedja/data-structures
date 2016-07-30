@@ -45,10 +45,13 @@ HashTable.prototype.retrieve = function(k) {
 //linear and constant time XD
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  var bucket = this._storage.get(index);
+  var bucket = this._storage.get(index) || [];
+
+
   for (var i = 0; i < bucket.length; i++) {
     if (bucket[i][0] === k) {
-      this._storage.set(index, undefined);
+      bucket.splice(i, 1); //This deletes the exaxt tuple over deleting the entire bucket as shown in the line below.
+      //this._storage.set(index, undefined);
     }
   }
 
